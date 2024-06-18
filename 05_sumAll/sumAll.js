@@ -2,7 +2,7 @@ const sumAll = function(start, end) {
 
     let sum = 0
 
-    if (Math.sign(start) === -1 || Math.sign(end) === -1) {
+    if (Math.sign(start) === -1 || Math.sign(end) === -1 || typeof(start) != 'number' || typeof(end) != 'number') {
         return 'ERROR';
     }
     else {
