@@ -1,7 +1,7 @@
 const removeFromArray = function(contactArray, ...contactToDelete) {
     let contactsCopyArray = [...contactArray]
     
-    debugger;
+    // debugger;
 
     for (toDelete of contactToDelete) {
         let pos = contactsCopyArray.indexOf(toDelete)
