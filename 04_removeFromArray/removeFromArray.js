@@ -1,31 +1,21 @@
-const removeFromArray = function(array, ...valueArray) {
+const removeFromArray = function(contactArray, ...contactToDelete) {
+    let contactsCopyArray = [...contactArray]
     
-    let newArray = []
-    
-    
-
-
-    for (let i = 0; i < array.length; ++i) {
-        let tempValue = array[i]
-        
-        
-        
-        if(tempValue == valueArray) {
-            console.log("Removing " + valueArray)
+    for (toDelete of contactToDelete) {
+        let pos = contactArray.indexOf(toDelete)
+        contactsCopyArray.splice(pos, 1)
+        if (contactsCopyArray.includes(toDelete)) {
+            let pos = contactArray.indexOf(toDelete)
+            contactsCopyArray.splice(pos, 1)
         }
         else {
-            console.log("Keeping: " + tempValue)
-            newArray.push(tempValue)
+            continue;
         }
-        
-        
     }
-    
-    
-    console.log("The returned array before being returned " + newArray)
-    return newArray; 
 
+    return contactsCopyArray;
 };
+
 
 // Do not edit below this line
 module.exports = removeFromArray;
